@@ -14,12 +14,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'page2.html',
 })
 export class Page2Page {
-
+  mutant:any={};
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    console.log(navParams);
+    this.mutant= this.navParams.get('mutant');
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Page2Page');
   }
 
+  navigateLast(){
+    this.navCtrl.pop();
+  }
+  navigateRoot(){
+    this.navCtrl.popToRoot();
+  }
 }
