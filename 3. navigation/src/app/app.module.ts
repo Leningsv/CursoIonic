@@ -15,12 +15,18 @@ import {
   TabsPage } from "../pages/index.pages";
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
 
 @NgModule({
-  declarations: [
+  declarations: [    
     MyApp,
-    HomePage
+    MainPage,
+    SettingsPage,
+    Settings2Page,
+    ModalPage,
+    Page1Page,
+    Page2Page,
+    Page3Page,
+    TabsPage
   ],
   imports: [
     BrowserModule,
@@ -29,7 +35,14 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    MainPage,
+    SettingsPage,
+    Settings2Page,
+    ModalPage,
+    Page1Page,
+    Page2Page,
+    Page3Page,
+    TabsPage
   ],
   providers: [
     StatusBar,
