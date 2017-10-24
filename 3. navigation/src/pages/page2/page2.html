@@ -11,17 +11,15 @@
   </ion-navbar>
 
 </ion-header>
-
-
 <ion-content padding>
   <h3 text-center>{{mutant.power}}</h3>
   <button ion-button block color="primary" (click)="navigateLast();">
     Ir atras con el evento
   </button>
-  <button ion-button block color="secondary" (click)="navigateRoot();">
-    Ir al root
-  </button>
   <button ion-button block color="danger" navPop>
     Ir atras sin evento
   </button>
+  <button ion-button block color="secondary" (click)="navigateRoot();">
+    Ir al root
+  </button>  
 </ion-content>

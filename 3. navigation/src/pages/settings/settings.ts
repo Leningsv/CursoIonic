@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 
-/**
- * Generated class for the SettingsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { ModalPage } from "../index.pages";
 
 @IonicPage()
 @Component({
@@ -14,12 +9,28 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'settings.html',
 })
 export class SettingsPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  modal1:any;
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              public modalCtrl:ModalController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SettingsPage');
   }
 
+  activeMain(){
+    this.navCtrl.parent.select(2);
+  }
+
+  openModal(){
+    let modal= this.modalCtrl.create( ModalPage, {name:'Lenin Samaniego', age: 29} );
+    modal.present();
+    modal.onDidDismiss(parameters=>{
+      if(parameters){
+        console.log('data parametros', parameters);
+      }else{
+        console.log('Se cerro el modal sin parametros');
+      }      
+    });
+  }
 }

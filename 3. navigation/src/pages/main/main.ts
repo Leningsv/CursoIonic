@@ -1,13 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 
 import { Page1Page } from "../index.pages";
-/**
- * Generated class for the MainPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -16,7 +10,9 @@ import { Page1Page } from "../index.pages";
 })
 export class MainPage {
   page1:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public menuCtrl:MenuController) {
     this.page1= Page1Page;
   }
 
@@ -26,5 +22,9 @@ export class MainPage {
 
   navigatePage(){
     this.navCtrl.push(Page1Page);
+  }
+
+  openMenu(){
+    this.menuCtrl.toggle();
   }
 }
