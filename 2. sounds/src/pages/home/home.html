@@ -1,14 +1,17 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>
-      Ionic Blank
+      Sounds App
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+  <ion-item *ngFor="let item of animals" (click)="play(item)">
+    <ion-avatar item-left>
+      <img [src]="item.imagen">
+    </ion-avatar>
+    <h2>{{item.nombre}}</h2>
+    <p>Descripcion {{item.nombre}}</p>
+  </ion-item>
 </ion-content>
